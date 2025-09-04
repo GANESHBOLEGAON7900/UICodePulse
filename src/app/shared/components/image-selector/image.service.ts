@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ImageService {
 
-  selectedImages:BehaviorSubject<BlogImage>=new BehaviorSubject<BlogImage>(
+  selectedImage:BehaviorSubject<BlogImage>=new BehaviorSubject<BlogImage>(
     {
       id:'',
       fileExtension:'',
@@ -34,9 +34,9 @@ return this.http.get<BlogImage[]>('https://localhost:7112/api/Images')
   }
 
   selectImage(image:BlogImage){
-      this.selectedImages.next(image);
+      this.selectedImage.next(image);
   }
   onSelectImage():Observable<BlogImage>{
-    return this.selectedImages.asObservable()
+    return this.selectedImage.asObservable()
   }
 }

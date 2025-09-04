@@ -61,6 +61,7 @@ export class EditBlogPostComponent implements OnInit ,OnDestroy {
           next:(response)=>{
               if (this.model) {
                 this.model.featuredImageUrl=response.url;
+                this.isImageSelectorVisible=false;
               }
           }
         })

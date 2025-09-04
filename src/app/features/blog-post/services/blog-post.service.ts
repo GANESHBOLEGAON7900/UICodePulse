@@ -24,6 +24,10 @@ export class BlogPostService {
     return this.http.get<BlogPost>(`https://localhost:7112/api/BlogPost/${id}`)
   }
 
+  getBlogPostByUrlHandle(urlHandle:string):Observable<BlogPost>{
+    return this.http.get<BlogPost>(`https://localhost:7112/api/BlogPost/${urlHandle}`)
+  }
+
   updateBlogPost(id:string,updateBlogPost:UpdateBlogPost):Observable<BlogPost>{
     return this.http.put<BlogPost>(`https://localhost:7112/api/BlogPost/${id}`,updateBlogPost);
   }

@@ -5,9 +5,18 @@ import { EditCategoryComponent } from './features/category/edit-category/edit-ca
 import { BlogPostListComponent } from './features/blog-post/blog-post-list/blog-post-list.component';
 import { AddBolgPostComponent } from './features/blog-post/add-bolg-post/add-bolg-post.component';
 import { EditBlogPostComponent } from './features/blog-post/edit-blog-post/edit-blog-post.component';
+import { HomeComponent } from './features/public/home/home.component';
+import { BlogDetailsComponent } from './features/public/blog-details/blog-details.component';
 
 export const routes: Routes = [
-
+     {
+        path:'',
+        component:HomeComponent
+     },
+     {
+        path:'blog/:url',
+        component:BlogDetailsComponent
+     },
     {
         path:"admin/categories",
         component:CategoryListComponent
